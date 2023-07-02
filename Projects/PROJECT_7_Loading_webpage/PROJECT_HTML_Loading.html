@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color:rgb(38, 31, 31);
+        font-family: Lato, sans-serif;
+      }
+      .loader {
+        width: 500px;
+        margin: 150px auto 70px;
+        position: sticky;
+      }
+      .loader .loading_1 {
+        position: relative;
+        width: 500px;
+        height: 10px;
+        align-items: center;
+        border: 10px solid rgb(210, 214, 161);
+        
+        border-radius: 50px;
+        animation: turn 4s linear 1, 75s infinite;
+      }
+      .loader .loading_1:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 100%;
+        background-color: lightgreen;
+        box-shadow: 10px 0px 15px 0px green;
+        animation: load 2s linear infinite;
+      }
+
+      .loader .loading_2 {
+        position: relative;
+        width: 100%;
+
+        top: 20px;
+        color: WHITE;
+        font-size: 32px;
+        font-family:fantasy ;
+        text-align: center;
+        animation: bounce 1s linear infinite;
+      }
+      @keyframes load {
+        from {
+          width: 0px;
+        }
+        to {
+          width: 500px;
+        }
+      }
+
+      @keyframes turn {
+        0% {
+          transform: rotateY(0deg);
+        }
+        6.25%,
+        50% {
+          transform: rotateY(180deg);
+        }
+        56.25%,
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+
+      @keyframes bounce {
+        from {
+          top: 0px;
+        }
+        to {
+          top: 25px;
+        }
+      }
+    </style>
+  </head>
+
+  
+  <body>
+    <div class="loader">
+      <div class="loading_1"></div>
+      <div class="loading_2">Loading...</div>
+    </div>
+  </body>
+</html>
